@@ -69,37 +69,37 @@ Implement a React + TypeScript unit converter app with a pure service layer for 
 - [x] 3. Checkpoint — service layer complete
   - Ensure all service tests pass, ask the user if questions arise.
 
-- [ ] 4. Implement shared UI primitive components
-  - [ ] 4.1 Implement `InputField` component
+- [x] 4. Implement shared UI primitive components
+  - [x] 4.1 Implement `InputField` component
     - Create `src/components/InputField.tsx`
     - Render a labeled `<input type="text">` with `htmlFor` / `id` association
     - Accept `value`, `onChange`, and `label` props
     - _Requirements: 2.3, 3.3, 6.2_
 
-  - [ ] 4.2 Implement `UnitSelector` component
+  - [x] 4.2 Implement `UnitSelector` component
     - Create `src/components/UnitSelector.tsx`
     - Render a labeled `<select>` with `htmlFor` / `id` association
     - Accept `units` (array of `{value, label}`), `value`, `onChange`, and `label` props
     - _Requirements: 2.1, 2.2, 3.1, 3.2, 6.2_
 
-  - [ ] 4.3 Implement `ResultDisplay` component
+  - [x] 4.3 Implement `ResultDisplay` component
     - Create `src/components/ResultDisplay.tsx`
     - When `error` prop is non-null, render the error message; otherwise render `"{value} {unit}"`
     - Format value with `parseFloat(value.toFixed(4))` to strip trailing zeros
     - _Requirements: 2.4, 2.8, 3.4, 3.8, 5.1, 5.2, 5.3_
 
-  - [ ]* 4.4 Write unit tests for primitive components
+  - [x]* 4.4 Write unit tests for primitive components
     - `InputField`: assert label is associated with input via `htmlFor`/`id`
     - `UnitSelector`: assert label association; assert all unit options are rendered
     - `ResultDisplay`: assert result with unit label; assert error message replaces result; assert no trailing zeros on whole numbers
     - _Requirements: 5.1, 5.2, 5.3, 6.2_
 
-  - [ ]* 4.5 Write property test — Property 6: Result display includes unit label
+  - [x]* 4.5 Write property test — Property 6: Result display includes unit label
     - **Property 6: Result display includes unit label**
     - Generate random numeric results and target unit labels; render `ResultDisplay`; assert rendered output contains the unit label string
     - **Validates: Requirements 5.3**
 
-  - [ ]* 4.6 Write property test — Property 7: Whole-number results have no trailing decimal zeros
+  - [x]* 4.6 Write property test — Property 7: Whole-number results have no trailing decimal zeros
     - **Property 7: Whole-number results have no trailing decimal zeros**
     - Generate inputs that produce whole-number results; render `ResultDisplay`; assert rendered string does not contain `"."` followed only by zeros
     - **Validates: Requirements 5.2**
