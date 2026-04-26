@@ -6,7 +6,7 @@ Implement a React + TypeScript unit converter app with a pure service layer for 
 
 ## Tasks
 
-- [ ] 1. Bootstrap project and configure tooling
+- [x] 1. Bootstrap project and configure tooling
   - Scaffold a React + TypeScript project (e.g., Vite)
   - Install dependencies: `react`, `react-dom`, `typescript`, `fast-check`, and a test runner (e.g., Vitest + `@testing-library/react`)
   - Configure `tsconfig.json` and test runner config
