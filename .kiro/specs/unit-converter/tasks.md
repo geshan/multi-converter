@@ -12,14 +12,14 @@ Implement a React + TypeScript unit converter app with a pure service layer for 
   - Configure `tsconfig.json` and test runner config
   - _Requirements: 4.1, 4.6_
 
-- [ ] 2. Implement the Converter Service layer
-  - [ ] 2.1 Define unit types and custom error classes
+- [x] 2. Implement the Converter Service layer
+  - [x] 2.1 Define unit types and custom error classes
     - Create `src/services/converterService.ts`
     - Define `TemperatureUnit` and `WeightUnit` union types
     - Implement `UnrecognizedUnitError`, `BelowAbsoluteZeroError`, and `NegativeWeightError` classes
     - _Requirements: 4.1, 4.2, 4.5_
 
-  - [ ] 2.2 Implement `convertTemperature`
+  - [x] 2.2 Implement `convertTemperature`
     - Chain all conversions through Celsius as intermediate unit
     - Apply formulas: C↔F (`F = (C × 9/5) + 32`), C↔K (`K = C + 273.15`)
     - Validate below-absolute-zero inputs; throw `BelowAbsoluteZeroError`
@@ -27,46 +27,46 @@ Implement a React + TypeScript unit converter app with a pure service layer for 
     - Round result to max 4 decimal places using `parseFloat(value.toFixed(4))`
     - _Requirements: 2.10, 2.11, 2.12, 2.13, 2.14, 4.2, 4.3, 4.4, 4.5_
 
-  - [ ] 2.3 Implement `convertWeight`
+  - [x] 2.3 Implement `convertWeight`
     - Normalize to kilograms using `WEIGHT_TO_KG` factors, then convert to target
     - Validate negative inputs; throw `NegativeWeightError`
     - Throw `UnrecognizedUnitError` for unknown unit identifiers
     - Round result to max 4 decimal places
     - _Requirements: 3.10, 3.11, 4.2, 4.3, 4.4, 4.5_
 
-  - [ ]* 2.4 Write unit tests for ConverterService
+  - [x]* 2.4 Write unit tests for ConverterService
     - Test known values: 0°C = 32°F = 273.15 K; 1 kg = 2.20462 lbs = 1000 g = 35.274 oz
     - Test absolute zero boundary (−273.15°C, −459.67°F, 0 K)
     - Test negative weight boundary
     - Test unrecognized unit throws with unit name in message
     - _Requirements: 2.10–2.14, 3.10, 3.11, 4.4, 4.5_
 
-  - [ ]* 2.5 Write property test — Property 1: Temperature round-trip
+  - [x]* 2.5 Write property test — Property 1: Temperature round-trip
     - **Property 1: Temperature conversion round-trip**
     - Generate random valid temperatures and unit pairs; convert A→B→A; assert result within ±0.0001 of original
     - **Validates: Requirements 2.4, 2.10, 2.11, 2.12, 2.13, 2.14**
 
-  - [ ]* 2.6 Write property test — Property 2: Weight round-trip
+  - [x]* 2.6 Write property test — Property 2: Weight round-trip
     - **Property 2: Weight conversion round-trip**
     - Generate random non-negative weights and unit pairs; convert A→B→A; assert result within ±0.0001 of original
     - **Validates: Requirements 3.4, 3.10, 3.11**
 
-  - [ ]* 2.7 Write property test — Property 3: Identity conversion
+  - [x]* 2.7 Write property test — Property 3: Identity conversion
     - **Property 3: Identity conversion**
     - Generate random values and any unit; convert U→U; assert result equals original value exactly
     - **Validates: Requirements 2.7, 3.7**
 
-  - [ ]* 2.8 Write property test — Property 4: Result precision
+  - [x]* 2.8 Write property test — Property 4: Result precision
     - **Property 4: Result precision**
     - Generate random valid inputs and unit pairs; assert returned number has at most 4 decimal places
     - **Validates: Requirements 4.4, 5.1**
 
-  - [ ]* 2.9 Write property test — Property 5: Unrecognized unit throws descriptive error
+  - [x]* 2.9 Write property test — Property 5: Unrecognized unit throws descriptive error
     - **Property 5: Unrecognized unit throws descriptive error**
     - Generate random strings that are not valid unit identifiers; assert thrown error message contains the unrecognized unit string
     - **Validates: Requirements 4.5**
 
-- [ ] 3. Checkpoint — service layer complete
+- [x] 3. Checkpoint — service layer complete
   - Ensure all service tests pass, ask the user if questions arise.
 
 - [ ] 4. Implement shared UI primitive components
